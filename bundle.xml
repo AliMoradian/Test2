@@ -17,6 +17,47 @@
       <span style="font-size: 12px; float: left;" id="status">ready</span>
       <span style="font-size: 12px; float: right;" id="limit">10000</span>
     </div>
+
+<div id="wxWrap">
+    <span id="wxIntro">
+        Currently in Manhattan, NY: 
+    </span>
+    <span id="wxIcon2"></span>
+    <span id="wxTemp"></span>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+// javascript will go here
+$(function(){
+
+    // Specify the ZIP/location code and units (f or c)
+    var loc = '10001'; // or e.g. SPXX0050
+    var u = 'f';
+
+    var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
+    var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
+    var url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&_nocache=' + cacheBuster;
+
+    window['wxCallback'] = function(data) {
+        var info = data.query.results.channel.item.condition;
+        $('#wxIcon').css({
+            backgroundPosition: '-' + (61 * info.code) + 'px 0'
+        }).attr({
+            title: info.text
+        });
+        $('#wxIcon2').append('<img src="http://l.yimg.com/a/i/us/we/52/' + info.code + '.gif" width="34" height="34" title="' + info.text + '" />');
+        $('#wxTemp').html(info.temp + '&deg;' + (u.toUpperCase()));
+    };
+
+    $.ajax({
+        url: url,
+        dataType: 'jsonp',
+        cache: true,
+        jsonpCallback: 'wxCallback'
+    });
+    
+});
+</script>
     <script type="text/javascript">
     const scratchpad = document.getElementById("scratchpad");
     const loading = document.getElementById("loading");
