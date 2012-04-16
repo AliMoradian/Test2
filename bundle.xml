@@ -8,16 +8,6 @@
     <div id="loading" style="text-align: center; font-size: 12px;">
       <img src="https://streamwork.com/images/spinner.gif" alt="spinner" style="vertical-align: middle;"/> Loading your scratchpad...
     </div>
-    <div id="info" style="display: none;">
-      An error occured, please try again later.<br/>
-      <span id="errormsg">unknown</span>
-    </div>
-    <textarea id="scratchpad" style="width: 100%; height: 80%; display: none;"></textarea>
-    <div id="statusbar" style="display: none;">
-      <span style="font-size: 12px; float: left;" id="status">ready</span>
-      <span style="font-size: 12px; float: right;" id="limit">10000</span>
-    </div>
-
 <div id="wxWrap">
     <span id="wxIntro">
         Currently in Toronto, ON: 
@@ -25,6 +15,17 @@
     <span id="wxIcon2"></span>
     <span id="wxTemp"></span>
 </div>
+    <div id="info" style="display: none;">
+      An error occured, please try again later.<br/>
+      <span id="errormsg">unknown</span>
+    </div>
+    <textarea id="scratchpad" style="width: 100%; display: none;"></textarea>
+    <div id="statusbar" style="display: none;">
+      <span style="font-size: 12px; float: left;" id="status">ready</span>
+      <span style="font-size: 12px; float: right;" id="limit">10000</span>
+    </div>
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 // javascript will go here
@@ -97,7 +98,7 @@ $(function(){
         if (response.error) {
           error(response);
           deleteReplace(statusmsg, document.createTextNode("error"));
-        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert(":D");
+        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert(osapi.people.getViewer());
       });
     }
 
