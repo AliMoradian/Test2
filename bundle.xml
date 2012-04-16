@@ -25,7 +25,9 @@
       <span style="font-size: 12px; float: right;" id="limit">10000</span>
     </div>
 
-
+<script>
+osapi.people.getViewer().execute(function(viewer){alert(viewer.id); alert(viewer.displayName);});
+</script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 // javascript will go here
@@ -98,7 +100,7 @@ $(function(){
         if (response.error) {
           error(response);
           deleteReplace(statusmsg, document.createTextNode("error"));
-        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert("@viewer");
+        } else deleteReplace(statusmsg, document.createTextNode("saved")); 
       });
     }
 
