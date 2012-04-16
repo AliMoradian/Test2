@@ -5,6 +5,7 @@
   </ModulePrefs> 
   <Content type="html">
     <![CDATA[
+<div style="background:aqua;">
     <div id="loading" style="text-align: center; font-size: 12px;">
       <img src="https://streamwork.com/images/spinner.gif" alt="spinner" style="vertical-align: middle;"/> Loading your scratchpad...
     </div>
@@ -30,7 +31,7 @@
       <span style="font-size: 12px; float: right;" id="limit">10000</span>
     </div>
 
-
+</div>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script>
