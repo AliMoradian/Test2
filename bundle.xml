@@ -98,7 +98,7 @@ $(function(){
         if (response.error) {
           error(response);
           deleteReplace(statusmsg, document.createTextNode("error"));
-        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert(osapi.people.getViewer());
+        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert("@viewer");
       });
     }
 
