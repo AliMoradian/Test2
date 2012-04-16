@@ -20,7 +20,7 @@
 
 <div id="wxWrap">
     <span id="wxIntro">
-        Currently in Manhattan, NY: 
+        Currently in Toronto, ON: 
     </span>
     <span id="wxIcon2"></span>
     <span id="wxTemp"></span>
@@ -31,7 +31,7 @@
 $(function(){
 
     // Specify the ZIP/location code and units (f or c)
-    var loc = 'm2m3r4'; // or e.g. SPXX0050
+    var loc = 'toronto'; // or e.g. SPXX0050
     var u = 'c';
 
     var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
