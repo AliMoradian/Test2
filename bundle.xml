@@ -17,6 +17,9 @@
 </div>
 <div id="dUserInformation">
 </div>
+<div id="dFriendsInfo"></div>
+<div>
+</div>
     <div id="info" style="display: none;">
       An error occured, please try again later.<br/>
       <span id="errormsg">unknown</span>
@@ -33,6 +36,10 @@
 <script>
 osapi.people.getViewer().execute(function(viewer){
 $("#dUserInformation").html("Hello "+ viewer.displayName +"! Your ID in StreamWork is: " + viewer.id);});
+
+osapi.people.get({userId: '@owner', groupId: '@friends'}).execute(function(ownerFriends) {
+  $("#dFriendsInfo").html('You have ' + ownerFriends.length + ' friends');
+});
 </script>
 
 <script type="text/javascript">
