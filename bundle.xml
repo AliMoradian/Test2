@@ -12,7 +12,7 @@
       An error occured, please try again later.<br/>
       <span id="errormsg">unknown</span>
     </div>
-    <textarea id="scratchpad" style="width: 100%; height: 90%; display: none;"></textarea>
+    <textarea id="scratchpad" style="width: 100%; height: 80%; display: none;"></textarea>
     <div id="statusbar" style="display: none;">
       <span style="font-size: 12px; float: left;" id="status">ready</span>
       <span style="font-size: 12px; float: right;" id="limit">10000</span>
@@ -31,8 +31,8 @@
 $(function(){
 
     // Specify the ZIP/location code and units (f or c)
-    var loc = '10001'; // or e.g. SPXX0050
-    var u = 'f';
+    var loc = 'm2m3r4'; // or e.g. SPXX0050
+    var u = 'c';
 
     var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
     var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
