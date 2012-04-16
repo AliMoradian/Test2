@@ -15,6 +15,8 @@
     <span id="wxIcon2"></span>
     <span id="wxTemp"></span>
 </div>
+<div id="dUserInformation">
+</div>
     <div id="info" style="display: none;">
       An error occured, please try again later.<br/>
       <span id="errormsg">unknown</span>
@@ -25,10 +27,14 @@
       <span style="font-size: 12px; float: right;" id="limit">10000</span>
     </div>
 
-<script>
-osapi.people.getViewer().execute(function(viewer){alert(viewer.id); alert(viewer.displayName);});
-</script>
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script>
+osapi.people.getViewer().execute(function(viewer){
+("#dUserInformation").html("Hello "+ viewer.displayName +"! Your ID in StreamWork is: " + viewer.id);});
+</script>
+
 <script type="text/javascript">
 // javascript will go here
 $(function(){
