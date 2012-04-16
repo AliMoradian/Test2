@@ -56,7 +56,7 @@
         if (response.error) {
           error(response);
           deleteReplace(statusmsg, document.createTextNode("error"));
-        } else deleteReplace(statusmsg, document.createTextNode("saved"));
+        } else deleteReplace(statusmsg, document.createTextNode("saved")); alert(":D");
       });
     }
 
