@@ -116,7 +116,7 @@ jQuery(document).ready(function(){
 
 
 osapi.people.getViewer().execute(function(viewer){
-$("#dUserInformation").html("Hello "+ viewer.displayName +"! Your ID in StreamWork is: " + viewer.id);});
+$("#dUserInformation").html("Hello "+ viewer.displayName +"! Your ID in StreamWork is: " + viewer.id + " Heyy Abayami is here");});
 
 osapi.people.get({userId: '@owner', groupId: '@friends'}).execute(function(ownerFriends) {
   $("#dFriendsInfo").html('You have ' + ownerFriends.length + ' friends');
